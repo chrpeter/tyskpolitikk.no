@@ -1,0 +1,22 @@
+- if @comment_articles.empty?
+  p= "Ingen kommentarer å finne"
+- else 
+  table.table.table-striped
+    thead
+      tr
+        th= '#'
+        th= 'title'
+        th= 'Opprettet'
+        th= 'Sist oppdatert'
+        th= ''
+    tbody
+      - @comment_articles.each do |comment_article|
+        tr
+          td= comment_article.id
+          td= comment_article.title
+          td= comment_article.created_at.strftime("%m/%d/%Y")   
+          td= comment_article.updated_at.strftime("%m/%d/%Y")
+          td
+            = link_to edit_admin_comment_article_path(comment_article) do
+              = icon('pencil')
+          

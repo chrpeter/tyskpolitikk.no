@@ -1,0 +1,54 @@
+nb:
+  activerecord:
+    models:
+      user:
+        username: Brukernavn
+        active: Aktiv
+        company_id: Selskap
+        master_resume_id: Master-CV
+        role: Rolle
+        role_id: Rolle
+      profile:
+        name: Navn
+        email: E-post
+        phone: Telefon
+        location: Arbeidssted
+        description: Beskrivelse
+        slogan: Motto
+        likes: Ønsker å jobbe med
+        dislikes: Ønsker ikke å jobbe med
+        date_of_birth: Fødselsdato
+        start_date: Begynte
+        locale: Språk
+        company_id: Selskap
+        avatar_file: Bilde
+        employment_ended_at: Sluttet
+      work_experience:
+        resume_id: CV
+        company_name: Selskap
+        position: Stilling
+        start_at: Fra
+        end_at: Til
+      resume:
+        user_id: Bruker
+        version_name: Versjonsnavn
+        version: Versjon
+        description: Beskrivelse
+        slogan: Motto
+      additional_info:
+        description: Beskrivelse
+        type_id: Type
+        year: År
+      skill_area:
+        description: Beskrivelse
+      skill_group:
+        description: Beskrivelse
+    values:
+      enum/role:
+        i18n_key:
+          user: 'Bruker'
+          poweruser: 'Superbruker'
+          admin: 'Administrator'
+          sales: 'Salg'
+          editor: 'Redaktør'
+          writer: 'Skribent'

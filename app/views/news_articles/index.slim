@@ -1,0 +1,17 @@
+h1 Nyheter
+.articles_list
+  - @news_articles.each do |news_article|
+    = link_to base_article_url(news_article)
+      .row.article_item
+        .col-md-2
+          - if news_article.header_photo.present?
+            = image_tag news_article.header_photo, class: 'article-photo'
+          - else 
+            = image_tag "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", class: 'article-photo'
+        .col-md-10
+          h2= news_article.title
+          i= news_article.ingress
+          hr
+          = render "users/writer_information", article: news_article
+.frontpage-pagination
+ = will_paginate @news_articles

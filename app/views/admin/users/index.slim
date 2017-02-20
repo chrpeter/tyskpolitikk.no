@@ -1,0 +1,6 @@
+h4.ui.horizontal.divider.header
+  = icon('user')
+  | &nbsp;
+  = 'Ny bruker'
+= link_to "Opprett bruker", new_admin_user_path, class: 'btn btn-primary'
+= render 'table'

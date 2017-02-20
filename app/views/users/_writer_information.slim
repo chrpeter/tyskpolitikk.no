@@ -1,0 +1,13 @@
+.article-writer-info
+  - if !article.owner.nil? && article.owner.profile.avatar.present?
+    = image_tag(article.owner.profile.avatar, class: 'img-circle')
+  - else
+    = image_tag('usericon', class: 'img-circle image-circle-plageholder')
+  - if !article.owner.nil? && article.owner.profile.present?
+    span
+      - if article.owner.profile.name.present?
+        = article.owner.profile.name
+      - else 
+        = "Tyskpolitikk.no"
+  span
+    = article.created_at.strftime("%d.%m.%Y")

@@ -1,0 +1,42 @@
+footer 
+  .row
+    .col-md-12.footer-content
+      h1 Tyskpolitikk.no
+  .row
+    .col-md-2.col-md-offset-5
+      hr
+  .row
+    .col-md-3.col-md-offset-4
+      .row
+        .col-md-12
+          h3 Ansvarlig redaktør
+          p Navn: Erik Rustad Markusen
+          p Epost: erm@tyskpolitikk.no
+      .row
+        .col-md-12
+    .col-md-5
+      h3 Navigasjon
+      ul.list-unstyled.footer-nav
+        li
+          = link_to 'Forside', root_path
+        li
+          = link_to 'Nyheter', news_articles_path
+        li
+          = link_to 'Om tyskpolitikk.no', about_germany_index_path
+        li
+          = link_to 'Kommentarer', comment_articles_path
+        li
+          = link_to "Kontakt", contact_index_path
+  .row
+    .col-md-2.col-md-offset-5
+      hr
+  .row
+    .col-md-12.footer-content
+      h5 
+        | Alt skrevet innehold tilhører tyskpolitikk.no 
+      h5
+        = icon('copyright') 
+        |&nbsp;- 2017
+              
+
+        

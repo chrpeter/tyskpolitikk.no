@@ -1,0 +1,24 @@
+- if @news_articles.empty?
+  p= "Ingen nyheter å finne"
+- else 
+  table.table.table-striped
+    thead
+      tr
+        th= '#'
+        th= 'title'
+        th= 'Opprettet'
+        th= 'Sist oppdatert'
+        th= ''
+    tbody
+      - @news_articles.each do |news_article|
+        tr
+          td= news_article.id
+          td= news_article.title
+          td= news_article.created_at.strftime("%m/%d/%Y")   
+          td= news_article.updated_at.strftime("%m/%d/%Y")
+          td
+            = link_to admin_news_article_path(news_article) do
+              = icon('eye')
+            = link_to edit_admin_news_article_path(news_article) do
+              = icon('pencil')
+          

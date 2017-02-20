@@ -1,0 +1,17 @@
+-if @news_article.header_photo.present?
+  .article_top-img
+    = image_tag(@news_article.header_photo)
+.row
+  .col-md-12
+    = render "users/writer_information", article: @news_article
+.row
+  .col-md-12
+    h2 = @news_article.title
+  .col-md-12
+      i = @news_article.ingress
+hr
+.row
+  .col-md-12
+    - if @news_article.content.present?
+      = @news_article.content.html_safe
+    = render 'layouts/discus'

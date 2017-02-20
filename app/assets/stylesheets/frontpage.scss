@@ -1,0 +1,304 @@
+// Place all the styles related to the frontpage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#navbar {
+  img {
+    max-height: 40px;
+    width: 1em;
+  }
+}
+.navbar {
+  background-color: white;
+}
+#frontpage-header {
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  padding: 0.5em 0;
+  h3 {
+    margin: 0;
+    color: black;
+    padding-top: 1em;
+    font-size: 3em;
+    display: inline-block;
+  }
+  img {
+    width: 15px;
+    display: inline-block;
+  }
+}
+#berlin-image {
+  background-image: linear-gradient( rgba(0,0,0,0.01), rgba(0,0,0,0.6) ), image-url('berlin.jpg');
+}
+#frankfurt-image {
+  background-image: linear-gradient( rgba(0,0,0,0.01), rgba(0,0,0,0.6) ), image-url('/assets/frankfurt.jpg');
+}
+#federalchancellery-image {
+  background-image: linear-gradient( rgba(0,0,0,0.01), rgba(0,0,0,0.6) ), image-url('/assets/federalchancellery.jpg');
+}
+
+.frontpage-actions {
+  text-align: center;
+  .btn {
+    float: none;
+    width: 200px;
+    border-radius: 0;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+}
+
+.fixed-background-image {
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+#frontpage-scroll {
+  font-size: 3em;
+  color: white;
+}
+#frontpage-scroll:hover {
+  color: red;
+}
+.hero {
+  color: white;
+  min-height: 256px;
+  text-align: center;
+}
+.hero-section {
+  width: 100;
+  margin: 0 auto;
+}
+.hero-title {
+  padding-top: 1em;
+  padding-bottom: 2em;
+  font-size: 6em;
+  margin-top: 0;
+}
+.hero-content {
+  padding: 4em 0;
+}
+.ui.menu {
+  border: none;
+  box-shadow: none;
+  background-color: $grey-1;
+  border-radius: 0;
+  border-bottom: 1px solid black;
+}
+.ui.menu > .item::before {
+  background: none;
+}
+.content {
+  padding: 2em 6em;
+}
+
+.container {
+  width: 80%;
+  min-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5em;
+}
+
+#admin-sidebar {
+  height: 100%;
+}
+#mobile-menu {
+  display: none;
+}
+#admin-mobile{
+  display: none;
+}
+#desktop-admin{
+  display: block;
+}
+.info-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  background-color: $grey-2;
+  opacity: 0.8;
+}
+.all-articles {
+  .article-photo{
+    height: 350px;
+    width: 100%;
+    border: 1px solid white;
+  }
+}
+.top-article {
+  .article-photo{
+    height: 600px;
+    width: 100%;
+    border: 1px solid white;
+  }
+}
+.frontpage-article-type {
+  display: block;
+  margin-bottom: 0.1em;
+  font-size: 1.1em;
+}
+.frontpage-writer-info {
+  img {
+    width: 36px;
+    height: 36px;
+    float: left;
+    margin-right: 0.2em;
+  }
+  span {
+    display: block;
+    font-size: 0.9em;
+  }
+  .light-red {
+    color: lighten($red-color, 20%);
+  }
+  .light-grey {
+    color: white;
+  }
+  .image-circle-plageholder {
+    background-color: white;
+  }
+}
+.section-border {
+  border-top: 4px solid lighten($red-color, 20%);
+  margin: 0 auto;
+  width: 10%;
+  padding: 0;
+}
+.top-article a, .all-articles a {
+  color: white;
+  h2 {
+    width: 100%;
+    z-index: 999;
+    margin-bottom: 0.1em;
+  }
+  &:hover, &:focus {
+    color: white;
+    text-decoration: none;
+  }
+}
+.image {
+  position: relative;
+  width: 100%; /* for IE 6 */
+}
+.pushable {
+  overflow: visible;
+}
+.footer {
+  width: 100%;
+}
+.twitter-logo {
+  color: $twitter-color;
+}
+.facebook-logo {
+  color: $facebook-color;
+}
+.tweets {
+  padding: 1em;
+  border: 1px solid $twitter-color;
+  max-height: 1000px;
+  overflow: scroll;
+  .tweet-text {
+    display: block;
+  }
+  .tweet-user{
+    display: block;
+  }
+  .tweet {
+    margin-top: 0.5em;
+  }
+}
+.fbfeed {
+  padding: 1em;
+  border: 1px solid $facebook-color;
+  max-height: 1000px;
+  overflow: scroll;
+  .fb-img{
+    display: block;
+    img {
+      border: 1px solid $facebook-color;
+    }
+  }
+  .fb-post {
+    margin-top: 0.5em;
+  }
+}
+.frontpage-contact {
+  text-align: center;
+
+  .btn {
+    padding: 1.5em 2.5em;
+    font-size: 1em;
+    border-radius: 0;
+  }
+}
+.listed-news_articles a{
+  color: black;
+}
+.listed-news_articles a:hover {
+  color: grey;
+}
+#articles-section {
+  padding-top: 1em;
+}
+#social-media {
+}
+#frontpage-contact {
+  padding: 10em 10%;
+}
+.frontpage-container {
+  width: 100%;
+  min-height: 100%;
+}
+.frontpage-container.content {
+  padding: 0;
+  background-color: transparent;
+}
+.frontpage-container > section {
+  padding: 6em 10%;
+  background-color: white;
+
+}
+@media (max-width: 1024px) {
+    #admin-sidebar {
+      display: none;
+    }
+    #admin-mobile{
+      display: block;
+    }
+    #mobile-menu {
+      display: block;
+    }
+    #desktop-admin {
+      .menu {
+        display: none;
+      }
+    }
+    .container {
+      width: 98%;
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+}
+
+@media (min-width: 50em) {
+  #header-photo_frontpage .hero-bg {
+
+  }
+}

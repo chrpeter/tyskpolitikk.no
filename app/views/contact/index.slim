@@ -1,0 +1,81 @@
+.row
+  - @all_editors.each do |user|
+    .col-md-6.user-card
+      h2 Redaktør
+      hr
+      .row
+        .col-md-4
+          .user-card_image
+            -if user.profile.avatar.present?
+             = image_tag(user.profile.avatar)
+            - else 
+              = image_tag('usericon')
+        .col-md-8
+          .user-card_information
+            .row
+              .col-md-12
+                p
+                  b Navn: 
+                  = user.profile.name
+                - if user.email
+                  p
+                    b E-post: 
+                    a href="mailto:#{user.email}"
+                      = user.email
+                - if user.profile.phone
+                    p
+                      b Telefon: 
+                      = user.profile.phone
+            .row
+              .col-md-12
+                .user-card_social-media
+                  .facebook
+                    a href=user.profile.facebook target="_blank"
+                      = icon('facebook-square')
+                  .twitter
+                    a href=user.profile.twitter target="_blank"
+                      = icon('twitter-square')
+                  .linkedin
+                    a href=user.profile.linkedin target="_blank"
+                      = icon('linkedin')
+
+  - @all_writers.each do |user|
+    .col-md-6.user-card
+      h2 Skribent
+      hr
+      .row
+        .col-md-4
+          .user-card_image
+            -if user.profile.avatar.present?
+             = image_tag(user.profile.avatar)
+            - else 
+              = image_tag('usericon')
+        .col-md-8
+          .user-card_information
+            .row
+              .col-md-12
+                p
+                  b Navn: 
+                  = user.profile.name
+                - if user.email
+                  p
+                    b E-post: 
+                    = user.email
+                - if user.profile.phone
+                    p
+                      b Telefon: 
+                      = user.profile.phone
+            .row
+              .col-md-12
+                .user-card_social-media
+                  .facebook
+                    a href=user.profile.facebook target="_blank"
+                      = icon('facebook-square')
+                  .twitter
+                    a href=user.profile.twitter target="_blank"
+                      = icon('twitter-square')
+                  .linkedin
+                    a href=user.profile.linkedin target="_blank"
+                      = icon('linkedin')
+  
+      

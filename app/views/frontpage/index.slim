@@ -1,0 +1,67 @@
+section#articles-section
+  .row 
+    - if @base_articles.size > 0
+      .row.top-article
+        = render 'frontpage/single_article', base_article: @base_articles[0], columns: 12
+      - if @base_articles.size > 1
+        - array_size = @base_articles.size - 1
+        - @base_articles[1..array_size].each_slice(2) do |row_articles|
+          br
+          .row.all-articles
+            = render 'frontpage/single_article', base_article: row_articles[0], columns: 6
+            = render 'frontpage/single_article', base_article: row_articles[1], columns: 6
+.section-border
+section#social-media
+  .row
+    .col-md-6
+      h3
+        span.twitter-logo= icon('twitter')
+        | &nbsp;
+        span Twitter
+      .tweets
+        h4 @tyskpolitikk
+        hr
+        - if @tweets.empty?
+          span Ingen twitter meldinger er postet enda
+        - else
+          - @tweets.each do |tweet|
+            .tweet
+              b.tweet-text = tweet.user.screen_name
+              span.tweet-text= tweet.text
+    .col-md-6
+      h3
+        span.facebook-logo= icon('facebook')
+        | &nbsp;
+        span Facebook
+      .fbfeed
+        h4 Tyskpolitikk
+        hr
+        - @facebook_feed.each do |fb|
+          - if fb.key?("picture")
+            .fb-post
+              .row
+                .col-md-3
+                  .fb-img 
+                    = image_tag(fb['picture'])
+                .col-md-9
+                  span = fb.key?("message") ? fb['message'] : 'Oppdatert bilde'
+            hr
+          - elsif fb.key?("message")
+            .fb-post
+              .row
+                .col-md-12
+                  span = fb['message']
+              hr
+                      
+.section-border            
+section#frontpage-contact
+  .row
+    .col-md-12.frontpage-contact
+      h1 Noe du lurer på?
+      br
+      = link_to 'Ta kontakt', contact_index_path, class: 'btn btn-germany-red'     
+
+      
+          
+      
+        

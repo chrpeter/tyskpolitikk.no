@@ -1,0 +1,17 @@
+h1 Kommentarer
+.articles_list
+  - @comment_articles.each do |comment_article|
+    = link_to base_article_url(comment_article)
+      .row.article_item
+        .col-md-2
+          - if comment_article.header_photo.present?
+            = image_tag comment_article.header_photo, class: 'article-photo'
+          - else 
+            = image_tag "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", class: 'article-photo'
+        .col-md-10
+          h2= comment_article.title
+          i= comment_article.ingress
+          hr
+          = render "users/writer_information", article: comment_article
+.frontpage-pagination
+ = will_paginate @comment_articles

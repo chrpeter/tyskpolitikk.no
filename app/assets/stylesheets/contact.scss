@@ -1,0 +1,38 @@
+.user-card {
+  -webkit-box-shadow: 3px 9px 19px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 9px 19px -7px rgba(0,0,0,0.75);
+  box-shadow: 3px 9px 19px -7px rgba(0,0,0,0.75);
+}
+.user-card_information {
+  b {
+    display: block;
+  }
+}
+
+.user-card_image img {
+  width: 100%;
+  border: 2px solid lighten($red-color, 20%);
+  border-radius: 3px;
+
+}
+.user-card_social-media i {
+  font-size: 2em;
+  padding-bottom: 0.5em;
+}
+.user-card_social-media div {
+  display: inline-block;
+  margin-right: 1em;
+}
+.facebook a {
+  color: $facebook-color;
+}
+.twitter a {
+  color: $twitter-color;
+}
+.linkedin a {
+  color: $linkedin-color;
+}
+
+.facebook, .twitter, .instagram {
+  text-align: center;
+}

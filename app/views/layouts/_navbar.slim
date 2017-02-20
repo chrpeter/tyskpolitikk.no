@@ -1,0 +1,22 @@
+nav.navbar.navbar-default#top-menu class="#{fixed ? 'navbar-fixed-top' : ''}"
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to root_path, class: 'navbar-brand' do
+        = "Tyskpolitikk.no"
+      end
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+      ul.nav.navbar-nav
+        li
+          = link_to 'Nyheter', news_articles_path, class: 'item'
+        li
+          = link_to 'Om tyskpolitikk.no', about_germany_index_path, class: 'item'
+        li
+          = link_to 'Kommentarer', comment_articles_path, class: 'item'
+        li
+          = link_to 'Kontakt', contact_index_path, class: 'item'
+          

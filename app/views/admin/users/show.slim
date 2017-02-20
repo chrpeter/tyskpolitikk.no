@@ -1,0 +1,28 @@
+.ui.stackable.two.column.grid
+  .row
+    h4.ui.horizontal.divider.header
+      = icon('user')
+      | &nbsp;
+      = 'Bruker informasjon'
+    .sixteen.wide.column
+      = "Brukernavn: #{@user.email}"
+  - if @user.profile.present?
+    .row
+      h4.ui.horizontal.divider.header
+        = icon('file-text')
+        | &nbsp;
+        = 'Profil informasjon'
+      .column.four.wide
+        = image_tag @user.profile.avatar, id: 'headshot'
+      .twelve.wide.column
+        .sixteen.wide.column
+          p 
+            b Navn: 
+            span = @user.profile.name
+          p 
+            b Epost: 
+            span = @user.profile.email
+          p 
+            b Telefon: 
+            span = @user.profile.name
+                

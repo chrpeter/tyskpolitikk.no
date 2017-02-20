@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html
+  head
+    title Tyskpolitikk
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => false
+    = csrf_meta_tags
+    meta name='viewport' content="width=device-width, initial-scale=1"
+
+  body
+      - if @is_frontpage
+        = render 'layouts/topphoto' unless @admin_panel
+      = render 'layouts/navbar', fixed: !@is_frontpage unless @admin_panel
+      - if current_user && @admin_panel
+        = render 'layouts/admin_sidebar'
+      - if @is_frontpage
+        div class="content frontpage-container"
+          = yield
+      - elsif @admin_panel
+        div class="content admin-container"
+          = yield
+      - else
+        div class="content container"
+          = yield
+      = render 'layouts/footer' unless @admin_panel

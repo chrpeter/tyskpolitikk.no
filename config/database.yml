@@ -1,0 +1,23 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: tyskpolitikk_production
+  pool: 5
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: tyskpolitikk_development
+  pool: 5
+  username: tyskpolitikk
+  password: devdb1234
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: tyskpolitikk_test
+  pool: 5
+  username: tyskpolitikk
+  password: devdb1234

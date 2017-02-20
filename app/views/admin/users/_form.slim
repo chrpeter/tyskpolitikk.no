@@ -1,0 +1,41 @@
+.row
+  - if @user.persisted?
+    h2 Oppdater bruker
+  - else
+    h2 Lag ny bruker
+= simple_form_for([:admin, @user], html: { class: 'form-horizontal' }) do |f|
+  .row
+    h4.ui.horizontal.divider.header
+      = icon('user')
+      | &nbsp;
+      = 'Bruker informasjon'
+  = f.input :email, autofocus: true, label: 'Epost (dette blir brukernavn)'
+  .row
+    .row
+      .col-md-6
+        = f.label :password, label: 'Passord'
+        = f.password_field :password, autocomplete: "off", class: 'form-control'
+      .col-md-6
+        = f.label :password_confirmation, label: 'Gjenta passord'
+        = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
+  = f.input :role_ids, label: 'Roles', collection: Enum::Role.all, input_html: { multiple: 'multiple', class: 'ui fluid search dropdown' }, label_method: ->(v) { v.to_s }
+  .row
+    h4.ui.horizontal.divider.header
+      = icon('file-text')
+      | &nbsp;
+      = 'Profil informasjon'
+  = @user.profile.avatar    
+  = f.simple_fields_for :profile do |g|
+    = g.input :name, label: 'Navn'
+    = g.input :avatar, as: :file, label: 'Bilde av deg selv'
+    = g.input :phone, label: 'Telefon'
+    = g.input :twitter
+    = g.input :facebook
+    = g.input :linkedin
+    = g.input :location, label: 'Hvor befinner du deg?'
+    = g.input :description, label: 'Beskrivelse av deg'
+  .row
+    - if @user.persisted?
+      = f.submit "Oppdater bruker", class: 'btn btn-primary'
+    - else 
+      = f.submit "Lag ny bruker", class: 'btn btn-primary'
