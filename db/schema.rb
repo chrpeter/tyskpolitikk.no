@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209123954) do
+ActiveRecord::Schema.define(version: 20170220212518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170209123954) do
   create_table "base_articles", force: :cascade do |t|
     t.string   "object_type",  null: false
     t.string   "title",        null: false
-    t.binary   "header_photo"
+    t.string   "header_photo"
     t.text     "ingress"
     t.text     "content"
     t.integer  "owner_id"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20170209123954) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id",                                 null: false
-    t.binary   "avatar"
+    t.string   "avatar"
     t.string   "name",                                    null: false
     t.string   "email",         limit: 50
     t.string   "phone",         limit: 20

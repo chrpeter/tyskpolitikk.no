@@ -44,7 +44,7 @@ gem 'font-awesome-sass', '~> 4.6.2'
 
 #AWS conn
 gem "fog-aws"
-
+gem 'thor', '0.19.1'
 # File uploading and image handling
 gem 'carrierwave'
 gem 'mini_magick'
