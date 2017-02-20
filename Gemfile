@@ -42,6 +42,9 @@ gem 'devise'
 # gem 'capistrano-rails', group: :development
 gem 'font-awesome-sass', '~> 4.6.2'
 
+#AWS conn
+gem "fog-aws"
+
 # File uploading and image handling
 gem 'carrierwave'
 gem 'mini_magick'

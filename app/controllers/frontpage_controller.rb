@@ -10,10 +10,10 @@ class FrontpageController < ApplicationController
   end
   def intialize_client
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = ENV['CONSUMER_KEY']
-      config.consumer_secret     = ENV['CONSUMER_KEY']
-      config.access_token        = ENV['CONSUMER_KEY']
-      config.access_token_secret = ENV['CONSUMER_KEY']
+      config.consumer_key        = ENV['TWITTER_CKEY']
+      config.consumer_secret     = ENV['TWITTER_CSECRET']
+      config.access_token        = ENV['TWITTER_ATOKEN']
+      config.access_token_secret = ENV['TWITTER_ASECRET']
     end
   end
 
