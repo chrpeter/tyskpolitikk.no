@@ -1,16 +1,28 @@
 section#articles-section
   .row 
     - if @base_articles.size > 0
-      .row.top-article
-        = render 'frontpage/single_article', base_article: @base_articles[0], columns: 12
-      - if @base_articles.size > 1
+      .row
+        .col-md-9
+          .row.top-article
+            = render 'frontpage/single_article', base_article: @base_articles[0], columns: 12
+        .col-md-3.top-side-articles
+          - if @base_articles.size > 1
+            .row
+              = render 'frontpage/single_article', base_article: @base_articles[1], columns: 12
+          - if @base_articles.size > 2
+            .row
+              = render 'frontpage/single_article', base_article: @base_articles[2], columns: 12
+          - if @base_articles.size > 3
+            .row
+              = render 'frontpage/single_article', base_article: @base_articles[3], columns: 12
+      - if @base_articles.size > 4
+        h2 Flere nyheter
         - array_size = @base_articles.size - 1
-        - @base_articles[1..array_size].each_slice(2) do |row_articles|
-          br
-          .row.all-articles
-            = render 'frontpage/single_article', base_article: row_articles[0], columns: 6
-            = render 'frontpage/single_article', base_article: row_articles[1], columns: 6
-.section-border
+        .row.all-articles
+          - @base_articles[4..array_size].each do |row_article|
+            = render 'frontpage/single_article', base_article: row_article, columns: 2
+section#brandenburger
+  = image_tag('brandenburgertor.jpg')
 section#social-media
   .row
     .col-md-6
@@ -49,12 +61,16 @@ section#social-media
           - elsif fb.key?("message")
             .fb-post
               .row
-                .col-md-12
+                .col-md-3
+                  .fb-img 
+                    = image_tag('logoSmall.jpg')
+                .col-md-9
                   span = fb['message']
               hr
                       
-.section-border            
 section#frontpage-contact
+  .section-border
+  br            
   .row
     .col-md-12.frontpage-contact
       h1 Noe du lurer på?

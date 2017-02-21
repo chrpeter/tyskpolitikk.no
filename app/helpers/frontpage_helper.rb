@@ -9,7 +9,6 @@ module FrontpageHelper
   end
 
   def base_article_url(base_article)
-    puts base_article.id
     if base_article.is_a? CommentArticle
       comment_article_path(base_article)
     else

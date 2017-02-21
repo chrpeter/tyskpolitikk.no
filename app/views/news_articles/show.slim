@@ -1,17 +1,41 @@
--if @news_article.header_photo.present?
-  .article_top-img
-    = image_tag(@news_article.header_photo)
 .row
   .col-md-12
-    = render "users/writer_information", article: @news_article
+    .article_top-img
+      -if @news_article.header_photo.present?
+        = image_tag(@news_article.header_photo)
+      - else
+        = image_tag "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150"
+    br      
 .row
-  .col-md-12
-    h2 = @news_article.title
-  .col-md-12
-      i = @news_article.ingress
-hr
-.row
-  .col-md-12
-    - if @news_article.content.present?
-      = @news_article.content.html_safe
-    = render 'layouts/discus'
+  .col-md-2
+    .row
+      .col-md-12
+        = render "users/writer_information", article: @news_article 
+        br
+    .row.all-articles.single-article-page
+      .col-md-12
+        h4 Andre nyheter
+        hr
+      - @news_articles.each do |news_article|
+        .col-md-12
+          = link_to base_article_url(news_article) do 
+            .image
+              - if news_article.header_photo.present?
+                = image_tag news_article.header_photo, class: 'article-photo'
+              - else 
+                = image_tag "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", class: 'article-photo'
+            h2
+              = news_article.title
+          hr        
+  .col-md-9.col-md-offset-1
+    .row
+      .col-md-12
+        h2 = @news_article.title
+    .row
+      .col-md-12
+          i = @news_article.ingress
+    .row
+      .col-md-12
+        - if @news_article.content.present?
+          = @news_article.content.html_safe
+        = render 'layouts/discus'

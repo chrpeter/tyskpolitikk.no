@@ -21,7 +21,6 @@ $(document).on 'turbolinks:load', ->
   $(window).on 'scroll', ->
     scroll = $(window).scrollTop();
     positionNav = scroll-(top_photo.height())
-    console.log(positionNav)
     if positionNav >= 0
       menu.addClass('navbar-fixed-top')
     else

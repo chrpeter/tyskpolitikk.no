@@ -6,21 +6,5 @@
           = image_tag base_article.header_photo, class: 'article-photo'
         - else 
           = image_tag "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", class: 'article-photo'
-        .info-overlay
-          h2
-            = base_article.title
-          span.frontpage-article-type
-            - if base_article.is_a?(NewsArticle)
-              = 'Nyhet'
-            - elsif base_article.is_a?(CommentArticle)
-              = 'Kommentar'
-          .frontpage-writer-info
-            - if !base_article.owner.nil? && base_article.owner.profile.avatar.present?
-              = image_tag(base_article.owner.profile.avatar, class: 'img-circle')
-            - else 
-              = image_tag('usericon', class: 'img-circle image-circle-plageholder')
-            - if !base_article.owner.nil? && base_article.owner.profile.present?
-              span.light-red
-                = base_article.owner.profile.name
-            span.light-grey
-              = base_article.created_at.strftime("%d.%m.%Y")
+      h2
+        = base_article.title

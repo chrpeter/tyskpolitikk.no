@@ -4,5 +4,6 @@ class CommentArticlesController < ApplicationController
     @comment_articles = CommentArticle.public_article.paginate(:page => params[:page])
   end
   def show
+    @comment_articles = NewsArticle.all.limit(5).order('created_at DESC')
   end
 end
