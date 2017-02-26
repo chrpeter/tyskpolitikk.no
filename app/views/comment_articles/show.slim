@@ -1,3 +1,11 @@
+- content_for :og_description do 
+  - @comment_article.ingress
+- content_for :og_title do 
+  - @comment_article.title
+- content_for :og_image do 
+  - @comment_article.header_photo.present? ? @comment_article.header_photo : 'https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150'
+- content_for :og_type do 
+ - 'article'
 .row
   .col-md-12
     .article_top-img

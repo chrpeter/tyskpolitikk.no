@@ -4,6 +4,6 @@ class NewsArticlesController < ApplicationController
     @news_articles = NewsArticle.public_article.order('created_at DESC').paginate(:page => params[:page])
   end
   def show
-    @news_articles = NewsArticle.all.limit(5).order('created_at DESC')
+    @news_articles = BaseArticle.public_article.where.not(id: @news_article.id).order('created_at DESC').limit(5)
   end
 end

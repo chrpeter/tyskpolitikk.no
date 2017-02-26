@@ -20,7 +20,7 @@ section#articles-section
         - array_size = @base_articles.size - 1
         .row.all-articles
           - @base_articles[4..array_size].each do |row_article|
-            = render 'frontpage/single_article', base_article: row_article, columns: 2
+            = render 'frontpage/single_article', base_article: row_article, columns: 3
 section#brandenburger
   = image_tag('brandenburgertor.jpg')
 section#social-media

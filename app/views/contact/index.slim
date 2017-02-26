@@ -1,6 +1,6 @@
 .row
   - @all_editors.each do |user|
-    .col-md-6.user-card
+    .col-md-4.user-card
       h2 Redaktør
       hr
       .row
@@ -17,15 +17,19 @@
                 p
                   b Navn: 
                   = user.profile.name
-                - if user.email
-                  p
-                    b E-post: 
+                p
+                  b E-post: 
+                  - if user.email
                     a href="mailto:#{user.email}"
                       = user.email
-                - if user.profile.phone
-                    p
-                      b Telefon: 
+                  - else
+                    | Ukjent epost
+                  p
+                    b Telefon: 
+                    - if user.profile.phone
                       = user.profile.phone
+                    - else 
+                      | 12345678
             .row
               .col-md-12
                 .user-card_social-media

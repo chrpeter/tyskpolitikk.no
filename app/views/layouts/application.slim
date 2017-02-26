@@ -4,8 +4,19 @@ html
     title Tyskpolitikk
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application', 'data-turbolinks-track' => false
+    = favicon_link_tag 'logo.png'
     = csrf_meta_tags
     meta name='viewport' content="width=device-width, initial-scale=1"
+    - if content_for?(:og_description)
+      meta property="og:description" content="#{yield(:og_description)}"
+    - else 
+      meta property="og:description" content="Nyhetsportal for tyskpolitikk"
+    - if content_for?(:og_image)
+      meta property="og:image" content="#{yield(:og_image)}"
+    - if content_for?(:og_title)
+      meta property="og:title" content="#{yield(:og_title)}"
+    - if content_for?(:og_type)
+     meta property="og:type" content="#{yield(:og_type)}"
 
   body
       - if @is_frontpage
