@@ -1,6 +1,6 @@
 
 # Change these
-server '188.166.70.10', roles: [:web, :app, :db], primary: true
+server '188.166.70.10', port: 30017, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:chrpeter/tyskpolitikk.no.git'
 set :application,     'tyskpolitikk'
