@@ -44,6 +44,9 @@
     width: 100%;
   }
 }
+.single-article-page h2 {
+  word-break: word-break;
+}
 @media (max-width: 991px) {
   .single-article-page {
     display: none;
