@@ -6,7 +6,7 @@ class FrontpageController < ApplicationController
     @tweets = twitter_client.home_timeline.take(10)
 
 
-    @base_articles = BaseArticle.public_article.order('created_at DESC').limit(9)
+    @base_articles = BaseArticle.public_article.order('created_at DESC').limit(8)
     @is_frontpage = true;
   end
   def intialize_client

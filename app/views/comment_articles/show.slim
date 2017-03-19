@@ -15,7 +15,7 @@
         = image_tag "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150"
     br      
 .row
-  .col-md-2
+  .col-md-3
     .row
       .col-md-12
         = render "users/writer_information", article: @comment_article 
@@ -35,7 +35,7 @@
             h2
               = comment_article.title
           hr        
-  .col-md-9.col-md-offset-1
+  .col-md-9
     .row
       .col-md-12
         h2 = @comment_article.title
