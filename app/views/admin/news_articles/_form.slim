@@ -1,6 +1,7 @@
 = simple_form_for([:admin, @news_article]) do |f|
   = f.input :title, label: 'Tittel på nyhet'
   = f.input :header_photo, as: :file, label: 'Hovedbilde'
+  = f.input :owner_id, label: 'Forfatter', collection: User.all, input_html: { class: 'ui fluid search dropdown' }, label_method: ->(v) { get_name_or_email(v) }
   = f.input :public, label: 'Skal nyheten publiseres?'
   = f.input :ingress, :input_html => { :rows => 2 }
   = f.input :content, :input_html => { :rows => 20, class: 'tinymce' }, label: 'Innhold'

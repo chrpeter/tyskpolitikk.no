@@ -19,9 +19,7 @@ html
      meta property="og:type" content="#{yield(:og_type)}"
 
   body
-      - if @is_frontpage
-        = render 'layouts/topphoto' unless @admin_panel
-      = render 'layouts/navbar', fixed: !@is_frontpage unless @admin_panel
+      = render 'layouts/navbar', is_frontpage: @is_frontpage unless @admin_panel
       - if current_user && @admin_panel
         = render 'layouts/admin_sidebar'
       - if @is_frontpage

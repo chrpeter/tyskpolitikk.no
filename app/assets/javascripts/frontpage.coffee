@@ -22,7 +22,6 @@ $(document).on 'turbolinks:load', ->
             label: 'Message'
           } ]
           onsubmit: (e) ->
-            console.log(e.data.tweeturl)
             editor.insertContent "<div class='tweet'>#{e.data.tweeturl}</div>"
             # Insert content when the window form is submitted
             # editor.insertContent '<blockquote> ' + e.data.message + ' @yourname <footer><a href="https://twitter.com/intent/tweet?text=' + encodeURI(e.data.message) + '%20@yourname" target="_blank" rel="nofollow">Tweet This</a></footer></blockquote>'
@@ -37,21 +36,9 @@ $(document).on 'turbolinks:load', ->
     $('.ui.labeled.icon.sidebar').sidebar('toggle')
 
 
-  menu = $('#top-menu')
-  top_photo = $('#frontpage-header')
-  $(window).on 'scroll', ->
-    scroll = $(window).scrollTop();
-    positionNav = scroll-(top_photo.height())
-    if positionNav >= 0
-      menu.addClass('navbar-fixed-top')
-    else
-      menu.removeClass('navbar-fixed-top')
-
 
 
 $(document).on 'turbolinks:load', ->
-
-
   $('#scroll-to-articles').on 'click', ->
     $('html, body').animate({
         scrollTop: $("#articles-section").offset().top

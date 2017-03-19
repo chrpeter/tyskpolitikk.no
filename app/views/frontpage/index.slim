@@ -2,10 +2,10 @@ section#articles-section
   .row 
     - if @base_articles.size > 0
       .row
-        .col-md-9
+        .col-md-8
           .row.top-article
-            = render 'frontpage/single_article', base_article: @base_articles[0], columns: 12
-        .col-md-3.top-side-articles
+            = render 'frontpage/header_article', base_article: @base_articles[0]
+        .col-md-4.top-side-articles
           - if @base_articles.size > 1
             .row
               = render 'frontpage/single_article', base_article: @base_articles[1], columns: 12
@@ -26,27 +26,14 @@ section#brandenburger
 section#social-media
   .row
     .col-md-6
-      h3
-        span.twitter-logo= icon('twitter')
-        | &nbsp;
-        span Twitter
       .tweets
-        h4 @tyskpolitikk
-        hr
-        - if @tweets.empty?
-          span Ingen twitter meldinger er postet enda
-        - else
-          - @tweets.each do |tweet|
-            .tweet
-              b.tweet-text = tweet.user.screen_name
-              span.tweet-text= tweet.text
+        = render 'frontpage/twitter'
     .col-md-6
-      h3
-        span.facebook-logo= icon('facebook')
-        | &nbsp;
-        span Facebook
       .fbfeed
-        h4 Tyskpolitikk
+        h3
+          span.facebook-logo= icon('facebook')
+          | &nbsp;
+          | Tyskpolitikk
         hr
         - @facebook_feed.each do |fb|
           - if fb.key?("picture")

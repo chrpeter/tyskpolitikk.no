@@ -27,7 +27,7 @@ module Admin
     protected
 
     def news_article_params
-      permitted_params = %i(id ingress title name content public header_photo)
+      permitted_params = %i(id ingress title name content public header_photo owner_id)
 
       params.require(:news_article).permit(permitted_params)
     end

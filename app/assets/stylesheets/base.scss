@@ -94,3 +94,89 @@ footer {
   border: 1px solid $grey-2;
   background-color: $grey-2;
 }
+
+.nav .item {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+.navbar-brand {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  line-height: 0;
+}
+
+.navbar .container-fluid {
+  width: 80%;
+  padding: 0 6em;
+}
+
+.frontpage-navbar .container-fluid {
+  padding: 0 19%;
+  width: 100%;
+}
+
+
+
+@media (max-width: 1024px) {
+  .navbar .container-fluid {
+    width: 98%;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 0 6em;
+  }
+
+  .frontpage-navbar .container-fluid {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  footer {
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .navbar .container-fluid {
+    width: 98%;
+    padding: 0 2em;
+
+    button {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+  }
+
+
+  .frontpage-navbar .container-fluid {
+    padding: 0 2em;
+  }
+}
+
+.navbar-toggle {
+  background: transparent !important;
+  transition: all 0.2s;
+  border: none;
+}
+.navbar-toggle:not(.collapsed) {
+  border: none;
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}

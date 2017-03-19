@@ -1,12 +1,16 @@
-nav.navbar.navbar-default#top-menu class="#{fixed ? 'navbar-fixed-top' : ''}"
+nav.navbar.navbar-default.navbar-fixed-top#top-menu class="#{is_frontpage ? 'frontpage-navbar' : ''}"
   .container-fluid
     .navbar-header
       button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
         span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
+        span.icon-bar.top-bar
+        span.icon-bar.middle-bar
+        span.icon-bar.bottom-bar
       = link_to root_path, class: 'navbar-brand' do
+        .logo
+          .black
+          .red
+          .yellow
         = "Tyskpolitikk.no"
       end
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
