@@ -1,9 +1,7 @@
 class FrontpageController < ApplicationController
 
   def index
-    twitter_client = intialize_client
     @facebook_feed = intialize_fb_client
-    @tweets = twitter_client.home_timeline.take(10)
 
 
     @base_articles = BaseArticle.public_article.order('created_at DESC').limit(8)
