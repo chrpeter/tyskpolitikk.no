@@ -296,7 +296,7 @@
   color: grey;
 }
 #articles-section {
-  padding-top: 1em;
+  padding-top: 3em;
 }
 #social-media {
 }
@@ -337,9 +337,9 @@
     }
 }
 
-@media (min-width: 50em) {
-  #header-photo_frontpage .hero-bg {
-
+@media (max-width: 767px) {
+  .frontpage-container > section {
+    padding: 6em 10%;
   }
 }
 @media (max-width: 991px) {

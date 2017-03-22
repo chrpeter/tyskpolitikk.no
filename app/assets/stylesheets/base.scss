@@ -127,6 +127,7 @@ footer {
 
   .frontpage-navbar .container-fluid {
     width: 100%;
+    padding-left: 16.5%;
   }
 }
 @media (max-width: 991px) {
@@ -135,9 +136,16 @@ footer {
   }
 }
 @media (max-width: 767px) {
+  .content {
+    padding: 2em 0.6em;
+  }
+  .container {
+    margin: 0 auto;
+  }
   .navbar .container-fluid {
     width: 98%;
-    padding: 0 2em;
+    padding-left: 0;
+    padding-right: 2em;
 
     button {
       margin-top: 1em;
@@ -147,7 +155,7 @@ footer {
 
 
   .frontpage-navbar .container-fluid {
-    padding: 0 2em;
+    padding-left: 6%;
   }
 }
 

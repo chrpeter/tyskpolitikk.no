@@ -44,7 +44,7 @@
                       = icon('linkedin')
 
   - @all_writers.each do |user|
-    .col-md-6.user-card
+    .col-md-4.user-card
       h2 Skribent
       hr
       .row
@@ -61,14 +61,19 @@
                 p
                   b Navn: 
                   = user.profile.name
-                - if user.email
+                p
+                  b E-post: 
+                  - if user.email
+                    a href="mailto:#{user.email}"
+                      = user.email
+                  - else
+                    | Ukjent epost
                   p
-                    b E-post: 
-                    = user.email
-                - if user.profile.phone
-                    p
-                      b Telefon: 
+                    b Telefon: 
+                    - if user.profile.phone
                       = user.profile.phone
+                    - else 
+                      | 12345678
             .row
               .col-md-12
                 .user-card_social-media
@@ -81,5 +86,4 @@
                   .linkedin
                     a href=user.profile.linkedin target="_blank"
                       = icon('linkedin')
-  
-      
+        
