@@ -114,6 +114,11 @@ footer {
   padding: 0 19%;
   width: 100%;
 }
+.about-site {
+  a {
+    color: lighten($red-color, 20%);
+  }
+}
 
 
 

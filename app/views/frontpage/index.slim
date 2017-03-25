@@ -5,6 +5,16 @@ section#articles-section
         .col-md-8
           .row.top-article
             = render 'frontpage/header_article', base_article: @base_articles[0]
+          .row
+            .col-md-12.follow-buttons
+              .facebook-follow.col-md-6
+                = link_to 'https://www.facebook.com/tyskpolitikk.no', target: '_blank' do
+                  p Følg oss på facebook
+                  = icon('facebook fa-3x')
+              .twitter-follow.col-md-6
+                = link_to 'https://twitter.com/tyskpolitikk', target: '_blank' do
+                  p Følg oss på Twitter
+                  = icon('twitter fa-3x')
         .col-md-4.top-side-articles
           - if @base_articles.size > 1
             .row

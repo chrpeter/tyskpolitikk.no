@@ -21,7 +21,7 @@ class BaseArticle < ActiveRecord::Base
   end
 
   def to_param
-    "#{id}-#{slug}"
+    "#{id}-#{slug.tr(',.;', '')}"
   end
 
 

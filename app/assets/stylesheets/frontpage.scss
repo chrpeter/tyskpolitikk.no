@@ -163,6 +163,7 @@
     font-size: 2em;
     font-weight: 400;
     hyphens: auto;
+    word-break: break-word;
   }
 }
 .top-article {
@@ -315,6 +316,32 @@
   padding: 6em 20%;
   background-color: white;
 }
+.follow-buttons {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.facebook-follow {
+  background-color: $facebook-color;
+}
+.facebook-follow, .twitter-follow {
+  text-align: center;
+}
+.twitter-follow {
+  background-color: $twitter-color;
+}
+.twitter-follow a, .facebook-follow a {
+  padding: 2em;
+  width: 100%;
+  display: block;
+  color: white;
+}
+.twitter-follow a:hover, .facebook-follow a:hover {
+  text-decoration: none;
+}
+.twitter-follow p, .facebook-follow p {
+  font-weight: bold;
+  font-size: 1.3em;
+}
 @media (max-width: 1024px) {
     #admin-sidebar {
       display: none;
@@ -345,5 +372,8 @@
 @media (max-width: 991px) {
   #brandenburger {
     height: 200px;
+  }
+  .follow-buttons {
+    display: none;
   }
 }
