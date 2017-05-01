@@ -21,7 +21,7 @@ module Admin
     end
 
     def index
-      @news_articles = NewsArticle.all
+      @news_articles = NewsArticle.all.order('created_at DESC')
     end
 
     protected

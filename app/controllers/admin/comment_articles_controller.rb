@@ -16,7 +16,7 @@ module Admin
       redirect_to action: :index
     end
     def index
-      @comment_articles = CommentArticle.all
+      @comment_articles = CommentArticle.all.order('created_at DESC')
     end
     def edit
     end
