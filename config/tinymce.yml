@@ -1,7 +1,9 @@
 toolbar:
   - styleselect | bold italic | undo redo
-  - image | link | fullpage
+  - image | link | fullpage | sizeselect | fontselect | fontsizeselect
 plugins:
   - image
   - link
   - fullpage
+  - fontsizeselect
+  - sizeselect
