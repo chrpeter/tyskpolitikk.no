@@ -7,7 +7,7 @@
 - content_for :og_type do 
  - 'article'
 - content_for :twitter_image do 
-  - @news_article.header_photo.present? ? @news_article.header_photo : 'https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150'
+  - @news_article.header_photo.present? ? @news_article.header_photo + "?" + SecureRandom.uuid : 'https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150'  + "?" + SecureRandom.uuid 
 - content_for :twitter_description do 
   - @news_article.ingress
 - content_for :twitter_title do 
