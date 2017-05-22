@@ -16,7 +16,17 @@ html
     - if content_for?(:og_title)
       meta property="og:title" content="#{yield(:og_title)}"
     - if content_for?(:og_type)
-     meta property="og:type" content="#{yield(:og_type)}"
+      meta property="og:type" content="#{yield(:og_type)}"
+    - if content_for?(:twitter_url)
+      meta property="twitter:url" content="#{yield(:twitter_url)}"
+    - if content_for?(:twitter_image)
+      meta property="twitter:image" content="#{yield(:twitter_image)}"
+    - if content_for?(:twitter_title)
+      meta property="twitter:title" content="#{yield(:twitter_title)}"
+      meta name="twitter:site" content="@tyskpolitikk"
+      meta name="twitter:card" content="summary"
+    - if content_for?(:twitter_description)
+      meta property="twitter:description" content="#{yield(:twitter_description)}"
 
   body
       = render 'layouts/navbar', is_frontpage: @is_frontpage unless @admin_panel
