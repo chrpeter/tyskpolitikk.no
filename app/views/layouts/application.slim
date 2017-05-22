@@ -21,6 +21,8 @@ html
       meta property="twitter:url" content="#{yield(:twitter_url)}"
     - if content_for?(:twitter_image)
       meta property="twitter:image" content="#{yield(:twitter_image)}"
+      meta property="twitter:image:src" content="#{yield(:twitter_image)}"
+
     - if content_for?(:twitter_title)
       meta property="twitter:title" content="#{yield(:twitter_title)}"
       meta name="twitter:site" content="@tyskpolitikk"
