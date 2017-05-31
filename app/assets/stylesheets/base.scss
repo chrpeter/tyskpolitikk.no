@@ -18,8 +18,20 @@ input {
 nav.navbar.navbar-default {
   margin-bottom: 0;
   border-radius: 0;
-
+  .item {
+    border-bottom: 4px solid white;
+  }
   .item:hover {
+    background: lighten($red-color, 20%);
+    border-bottom: 4px solid lighten($red-color, 20%);
+    color: white;
+  }
+  .active .item {
+    border-bottom: 4px solid lighten($red-color, 20%);
+    background: white;
+  }
+  .active .item:hover {
+    border-bottom: 4px solid lighten($red-color, 20%);
     background: lighten($red-color, 20%);
     color: white;
   }

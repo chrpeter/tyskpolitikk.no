@@ -8,7 +8,7 @@ nav.navbar.navbar-default
         span.icon-bar
       a.navbar-brand href="#"
         ="Tyskpolitikk.no"
-    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+    .collapse.navbar-collapse
       ul.nav.navbar-nav
         li
           a.item
@@ -20,17 +20,17 @@ nav.navbar.navbar-default
             = icon('arrow-left')
             | &nbsp;
             | Tilbake til forsiden
-        li
+        li class="#{'active' if current_page? admin_news_articles_path}"
           = link_to admin_news_articles_path, class: 'item' do
             = icon('newspaper-o')
             | &nbsp;
             | Nyheter
-        li  
+        li class="#{'active' if current_page? admin_comment_articles_path}"
           = link_to admin_comment_articles_path, class: 'item' do
             = icon('comment')
             | &nbsp;
             | Kommentarer
-        li
+        li class="#{'active' if current_page? admin_users_path}"
           = link_to admin_users_path, class: 'item' do
             = icon('users')
             | &nbsp;

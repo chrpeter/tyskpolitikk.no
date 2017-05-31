@@ -34,6 +34,8 @@ $(document).on 'turbolinks:load', ->
     extended_valid_elements : "a[class|name|href|target|title|onclick|rel],script[type|src],iframe[src|style|width|height|scrolling|marginwidth|marginheight|frameborder],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],$elements",
     toolbar: "undo redo pastetext alignleft aligncenter alignright alignjustify image link | bold italic | styleselect | fontselect | fontsizeselect",
     fontsize_formats: '8pt 9pt 10pt 11pt 12pt 13pt 14pt 18pt 24pt 36pt'
+    relative_urls : false,
+    remove_script_host : false,
   $('.toggle-menu').on 'click', ->
     $('.ui.labeled.icon.sidebar').sidebar('toggle')
 

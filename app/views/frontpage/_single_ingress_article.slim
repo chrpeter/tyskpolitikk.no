@@ -1,0 +1,14 @@
+- if base_article
+  .row
+    div class="#{'col-md-' + columns.to_s}"
+      = link_to base_article_url(base_article) do 
+        .col-md-2
+          .image
+            - if base_article.header_photo.present?
+              = image_tag base_article.header_photo, class: 'article-photo'
+            - else 
+              = image_tag "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", class: 'article-photo'
+        .col-md-10
+          h2
+            = base_article.title
+          i = base_article.ingress

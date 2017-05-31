@@ -15,12 +15,12 @@ nav.navbar.navbar-default.navbar-fixed-top#top-menu class="#{is_frontpage ? 'fro
       end
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       ul.nav.navbar-nav
-        li
+        li class="#{'active' if current_page? news_articles_path}"
           = link_to 'Nyheter', news_articles_path, class: 'item'
-        li
+        li class="#{'active' if current_page? comment_articles_path}"
           = link_to 'Kommentarer', comment_articles_path, class: 'item'
-        li
+        li class="#{'active' if current_page? about_germany_index_path}"
           = link_to 'Om tyskpolitikk.no', about_germany_index_path, class: 'item'
-        li
+        li class="#{'active' if current_page? contact_index_path}"
           = link_to 'Kontakt', contact_index_path, class: 'item'
           
