@@ -1,0 +1,18 @@
+- if @images.empty?
+  p= "Ingen bilder å finne"
+- else 
+  table.table.table-striped
+    thead
+      tr
+        th= '#'
+        th= 'url'
+        th= 'Opprettet'
+        th= ''
+    tbody
+      - @images.each do |image|
+        tr
+          td= image.id
+          td= image.image_file_url
+          td= image.created_at.strftime("%m/%d/%Y")
+          td
+            img src="#{image.image_file_url}"

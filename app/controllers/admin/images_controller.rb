@@ -1,28 +1,16 @@
 module Admin
   class ImagesController < Admin::AdminApplicationController
-
-    def new
-    end
     def create
       puts params
-      puts @image
-      render :nothing => true
-    end
-    def update
-      @comment_article.update_attributes(comment_article_params)
-      redirect_to action: :index
+      image = Image.create params.permit(:image_file, :caption)
+      puts image
+      render json: {
+        image: image.image_file
+      }, content_type: "text/html"
     end
     def index
-      @comment_articles = CommentArticle.all.order('created_at DESC')
+      @images = Image.all.order('created_at DESC')
     end
-    def edit
-    end
-    protected
 
-    def image_params
-      permitted_params = %i(image_file caption)
-
-      params.require(:image_file).permit(permitted_params)
-    end
   end
 end
