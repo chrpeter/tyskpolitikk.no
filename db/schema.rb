@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220212518) do
+ActiveRecord::Schema.define(version: 20170531192726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(version: 20170220212518) do
 
   add_index "enumerations", ["i18n_key"], name: "index_enumerations_on_i18n_key", using: :btree
   add_index "enumerations", ["type", "i18n_key"], name: "index_enumerations_on_type_and_i18n_key", unique: true, using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.string   "caption",    default: ""
+    t.string   "image_file",              null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id",                                 null: false

@@ -15,11 +15,6 @@ nav.navbar.navbar-default
             = icon('user')
             | &nbsp;
             = current_user.email
-        li
-          = link_to root_path, class: 'item' do
-            = icon('arrow-left')
-            | &nbsp;
-            | Tilbake til forsiden
         li class="#{'active' if current_page? admin_news_articles_path}"
           = link_to admin_news_articles_path, class: 'item' do
             = icon('newspaper-o')
@@ -35,6 +30,11 @@ nav.navbar.navbar-default
             = icon('users')
             | &nbsp;
             | Brukere
+        li class="#{'active' if current_page? admin_images_path}"
+          = link_to admin_images_path, class: 'item' do
+            = icon('picture-o')
+            | &nbsp;
+            | Bilder
         li
           = link_to destroy_user_session_path, method: :delete, class: 'item' do
             = icon('sign-out')

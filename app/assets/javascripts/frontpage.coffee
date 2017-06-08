@@ -23,8 +23,6 @@ $(document).on 'turbolinks:load', ->
           } ]
           onsubmit: (e) ->
             editor.insertContent "<div class='tweet'>#{e.data.tweeturl}</div>"
-            # Insert content when the window form is submitted
-            # editor.insertContent '<blockquote> ' + e.data.message + ' @yourname <footer><a href="https://twitter.com/intent/tweet?text=' + encodeURI(e.data.message) + '%20@yourname" target="_blank" rel="nofollow">Tweet This</a></footer></blockquote>'
             return
         return
     return
@@ -35,7 +33,52 @@ $(document).on 'turbolinks:load', ->
     toolbar: "undo redo pastetext alignleft aligncenter alignright alignjustify image link | bold italic | styleselect | fontselect | fontsizeselect",
     fontsize_formats: '8pt 9pt 10pt 11pt 12pt 13pt 14pt 18pt 24pt 36pt'
     relative_urls : false,
+    image_title: true,
+    image_description: false,
+    automatic_uploads: true,
     remove_script_host : false,
+    file_picker_types: 'image',
+    file_picker_callback: (cb, value, meta) ->
+      input = document.createElement('input')
+      input.setAttribute 'type', 'file'
+      input.setAttribute 'accept', 'image/*'
+      input.onchange = ->
+        file = @files[0]
+        reader = new FileReader
+        reader.readAsDataURL file
+        reader.onload = ->
+          id = 'blobid' + (new Date).getTime()
+          blobCache = tinymce.activeEditor.editorUpload.blobCache
+          blobInfo = blobCache.create(id, file, reader.result)
+          blobCache.add blobInfo
+          cb blobInfo.blobUri(), title: file.name
+          return
+        return
+      input.click()
+      return
+    images_upload_handler: (blobInfo, success, failure) ->
+      xhr = undefined
+      formData = undefined
+      xhr = new XMLHttpRequest
+      xhr.withCredentials = false
+      xhr.open 'POST', window.location.origin + '/admin/images'
+      xhr.setRequestHeader("X-CSRF-Token", $('meta[name="csrf-token"]').attr('content'));
+      xhr.onload = ->
+        json = undefined
+        if xhr.status != 200
+          failure 'HTTP Error: ' + xhr.status
+          return
+        json = JSON.parse(xhr.responseText)
+        if !json or typeof json.image.url != 'string'
+          failure 'Invalid JSON: ' + xhr.responseText
+          return
+        success json.image.url
+        return
+      formData = new FormData
+      formData.append 'image_file', blobInfo.blob(), blobInfo.filename()
+      xhr.send formData
+      return
+
   $('.toggle-menu').on 'click', ->
     $('.ui.labeled.icon.sidebar').sidebar('toggle')
 
