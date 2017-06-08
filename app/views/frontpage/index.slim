@@ -22,16 +22,13 @@ section#articles-section
           - if @base_articles.size > 2
             .row
               = render 'frontpage/single_article', base_article: @base_articles[2], columns: 12
-          - if @base_articles.size > 3
-            .row
-              = render 'frontpage/single_article', base_article: @base_articles[3], columns: 12
-      - if @base_articles.size > 4
+      - if @base_articles.size > 3
         .more-news_title
           h2 Flere nyheter
           hr
         - array_size = @base_articles.size - 1
         .row.all-articles
-          - @base_articles[4..array_size].each do |row_article|
+          - @base_articles[3..array_size].each do |row_article|
             = render 'frontpage/single_ingress_article', base_article: row_article, columns: 12
 
             
