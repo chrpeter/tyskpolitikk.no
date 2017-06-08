@@ -155,8 +155,8 @@
 }
 .all-articles {
   .article-photo{
-    height: 150px;
     width: 100%;
+    max-width: 100%;
     border: 1px solid white;
   }
   h2 {
