@@ -1,91 +1,92 @@
 .row
+  .col-md-12
+    h2 Redaktører
+    br
   - @all_editors.each do |user|
-    .col-md-6
-      .user-card
-        h2 Redaktør
-        hr
-        .row
-          .col-md-4
-            .user-card_image
-              -if user.profile.avatar.present?
-               = image_tag(user.profile.avatar)
-              - else 
-                = image_tag('usericon')
-          .col-md-8
-            .user-card_information
-              .row
-                .col-md-12
+    .col-md-12
+      .row
+        .col-md-4
+          .user-card_image
+            -if user.profile.avatar.present?
+             = image_tag(user.profile.avatar)
+            - else 
+              = image_tag('usericon')
+        .col-md-8
+          .user-card_information
+            .row
+              .col-md-12
+                p
+                  b Navn: 
+                  = user.profile.name
+                p
+                  b E-post: 
+                  - if user.email && user.email.present?
+                    a href="mailto:#{user.email}"
+                      = user.email
+                  - else
+                    | -
                   p
-                    b Navn: 
-                    = user.profile.name
-                  p
-                    b E-post: 
-                    - if user.email && user.email.present?
-                      a href="mailto:#{user.email}"
-                        = user.email
-                    - else
+                    b Telefon: 
+                    - if user.profile.phone && user.profile.phone.present?
+                      = user.profile.phone
+                    - else 
                       | -
-                    p
-                      b Telefon: 
-                      - if user.profile.phone && user.profile.phone.present?
-                        = user.profile.phone
-                      - else 
-                        | -
-              .row
-                .col-md-12
-                  .user-card_social-media
-                    .facebook
-                      a href=user.profile.facebook target="_blank"
-                        = icon('facebook-square')
-                    .twitter
-                      a href=user.profile.twitter target="_blank"
-                        = icon('twitter-square')
-                    .linkedin
-                      a href=user.profile.linkedin target="_blank"
-                        = icon('linkedin')
-
+            .row
+              .col-md-12
+                .user-card_social-media
+                  .facebook
+                    a href=user.profile.facebook target="_blank"
+                      = icon('facebook-square')
+                  .twitter
+                    a href=user.profile.twitter target="_blank"
+                      = icon('twitter-square')
+                  .linkedin
+                    a href=user.profile.linkedin target="_blank"
+                      = icon('linkedin')
+      hr
+  .col-md-12          
+    h2 Skribenter
+    br
   - @all_writers.each do |user|
-    .col-md-6
-      .user-card
-        h2 Skribent
-        hr
-        .row
-          .col-md-4
-            .user-card_image
-              -if user.profile.avatar.present?
-               = image_tag(user.profile.avatar)
-              - else 
-                = image_tag('usericon')
-          .col-md-8
-            .user-card_information
-              .row
-                .col-md-12
+    .col-md-12
+      .row
+        .col-md-4
+          .user-card_image
+            -if user.profile.avatar.present?
+             = image_tag(user.profile.avatar)
+            - else 
+              = image_tag('usericon')
+        .col-md-8
+          .user-card_information
+            .row
+              .col-md-12
+                p
+                  b Navn: 
+                  = user.profile.name
+                p
+                  b E-post: 
+                  - if user.email && user.email.present?
+                    a href="mailto:#{user.email}"
+                      = user.email
+                  - else
+                    | Ukjent epost
                   p
-                    b Navn: 
-                    = user.profile.name
-                  p
-                    b E-post: 
-                    - if user.email && user.email.present?
-                      a href="mailto:#{user.email}"
-                        = user.email
-                    - else
-                      | Ukjent epost
-                    p
-                      b Telefon: 
-                      - if user.profile.phone && user.profile.phone.present?
-                        = user.profile.phone
-                      - else 
-                        | -
-              .row
-                .col-md-12
-                  .user-card_social-media
-                    .facebook
-                      a href=user.profile.facebook target="_blank"
-                        = icon('facebook-square')
-                    .twitter
-                      a href=user.profile.twitter target="_blank"
-                        = icon('twitter-square')
-                    .linkedin
-                      a href=user.profile.linkedin target="_blank"
-                        = icon('linkedin')
-        
+                    b Telefon: 
+                    - if user.profile.phone && user.profile.phone.present?
+                      = user.profile.phone
+                    - else 
+                      | -
+            .row
+              .col-md-12
+                .user-card_social-media
+                  .facebook
+                    a href=user.profile.facebook target="_blank"
+                      = icon('facebook-square')
+                  .twitter
+                    a href=user.profile.twitter target="_blank"
+                      = icon('twitter-square')
+                  .linkedin
+                    a href=user.profile.linkedin target="_blank"
+                      = icon('linkedin')
+      hr
+      

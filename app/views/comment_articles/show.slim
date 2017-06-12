@@ -50,7 +50,7 @@
       .col-md-12.article_ingress
           i = @comment_article.ingress
     .row
-      .col-md-12
+      .col-md-12.article-content
         - if @comment_article.content.present?
           = @comment_article.content.html_safe
         = render 'layouts/discus'
