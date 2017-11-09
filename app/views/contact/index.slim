@@ -1,6 +1,6 @@
 .row
   .col-md-12
-    h2 Redaktører
+    h2 Redaktør
     br
   - @all_editors.each do |user|
     .col-md-12
@@ -9,27 +9,27 @@
           .user-card_image
             -if user.profile.avatar.present?
              = image_tag(user.profile.avatar)
-            - else 
+            - else
               = image_tag('usericon')
         .col-md-8
           .user-card_information
             .row
               .col-md-12
                 p
-                  b Navn: 
+                  b Navn:
                   = user.profile.name
                 p
-                  b E-post: 
+                  b E-post:
                   - if user.email && user.email.present?
                     a href="mailto:#{user.email}"
                       = user.email
                   - else
                     | -
                   p
-                    b Telefon: 
+                    b Telefon:
                     - if user.profile.phone && user.profile.phone.present?
                       = user.profile.phone
-                    - else 
+                    - else
                       | -
             .row
               .col-md-12
@@ -44,7 +44,7 @@
                     a href=user.profile.linkedin target="_blank"
                       = icon('linkedin')
       hr
-  .col-md-12          
+  .col-md-12
     h2 Skribenter
     br
   - @all_writers.each do |user|
@@ -54,27 +54,27 @@
           .user-card_image
             -if user.profile.avatar.present?
              = image_tag(user.profile.avatar)
-            - else 
+            - else
               = image_tag('usericon')
         .col-md-8
           .user-card_information
             .row
               .col-md-12
                 p
-                  b Navn: 
+                  b Navn:
                   = user.profile.name
                 p
-                  b E-post: 
+                  b E-post:
                   - if user.email && user.email.present?
                     a href="mailto:#{user.email}"
                       = user.email
                   - else
                     | Ukjent epost
                   p
-                    b Telefon: 
+                    b Telefon:
                     - if user.profile.phone && user.profile.phone.present?
                       = user.profile.phone
-                    - else 
+                    - else
                       | -
             .row
               .col-md-12
@@ -89,4 +89,3 @@
                     a href=user.profile.linkedin target="_blank"
                       = icon('linkedin')
       hr
-      
