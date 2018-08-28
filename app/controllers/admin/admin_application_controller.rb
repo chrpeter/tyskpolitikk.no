@@ -1,3 +1,5 @@
+require 'mime/types'
+
 # All Administrate controllers inherit from this `Admin::ApplicationController`,
 # making it the ideal place to put authentication logic or other
 # before_filters.
@@ -6,8 +8,8 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class AdminApplicationController < ApplicationController
-    before_filter :authentication_user
-    before_filter :admin_panel
+    before_action :authentication_user
+    before_action :admin_panel
 
     def admin_panel
       @admin_panel = true

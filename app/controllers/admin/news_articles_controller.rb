@@ -8,7 +8,7 @@ module Admin
       if @news_article.save
         redirect_to action: :index
       else
-        redirect_to :back
+        redirect_back fallback_location: root_path
       end
     end
 
