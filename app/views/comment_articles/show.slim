@@ -1,31 +1,31 @@
-- content_for :og_description do 
+- content_for :og_description do
   - @comment_article.ingress
-- content_for :og_title do 
+- content_for :og_title do
   - @comment_article.title
-- content_for :og_image do 
+- content_for :og_image do
   - @comment_article.header_photo.present? ? @comment_article.header_photo : 'https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150'
-- content_for :og_type do 
+- content_for :og_type do
  - 'article'
-- content_for :twitter_image do 
+- content_for :twitter_image do
   - @comment_article.header_photo.present? ? @comment_article.header_photo : 'https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150'
-- content_for :twitter_description do 
+- content_for :twitter_description do
   - @comment_article.ingress
-- content_for :twitter_title do 
+- content_for :twitter_title do
   - @comment_article.title
 
 .row
   .col-md-12
     .article_top-img
       -if @comment_article.header_photo.present?
-        = image_tag(@comment_article.header_photo)
+        = image_tag(image_path(path: @comment_article.header_photo.file.path))
       - else
         = image_tag "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150"
-    br      
+    br
 .row
   .col-md-3
     .row
       .col-md-12
-        = render "users/writer_information", article: @comment_article 
+        = render "users/writer_information", article: @comment_article
         br
     .row.all-articles.single-article-page
       .col-md-12
@@ -33,15 +33,15 @@
         hr
       - @comment_articles.each do |comment_article|
         .col-md-12
-          = link_to base_article_url(comment_article) do 
+          = link_to base_article_url(comment_article) do
             .image
               - if comment_article.header_photo.present?
-                = image_tag comment_article.header_photo, class: 'article-photo'
-              - else 
+                = image_tag image_path(path: comment_article.header_photo.file.path), class: 'article-photo'
+              - else
                 = image_tag "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", class: 'article-photo'
             h2
               = comment_article.title
-          hr        
+          hr
   .col-md-9
     .row
       .col-md-12.article-content_title

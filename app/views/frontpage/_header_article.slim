@@ -1,10 +1,10 @@
 - if base_article
   .col-md-12
-    = link_to base_article_url(base_article) do 
+    = link_to base_article_url(base_article) do
       .image
         - if base_article.header_photo.present?
-          = image_tag base_article.header_photo, class: 'article-photo'
-        - else 
+          = image_tag image_path(path: base_article.header_photo.file.path), class: 'article-photo'
+        - else
           = image_tag "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", class: 'article-photo'
       h2
         = base_article.title

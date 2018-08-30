@@ -6,7 +6,7 @@
   - if !article.owner.nil? && article.owner.profile.present? && article.owner.profile.name.present?
     span
       = article.owner.profile.name
-  - else 
+  - else
     = "Tyskpolitikk.no"
   span
     = article.created_at.strftime("%d.%m.%Y")

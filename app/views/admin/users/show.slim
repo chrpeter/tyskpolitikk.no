@@ -13,16 +13,15 @@
         | &nbsp;
         = 'Profil informasjon'
       .column.four.wide
-        = image_tag @user.profile.avatar, id: 'headshot'
+        = image_tag image_path(path: @user.profile.avatar.file.path), id: 'headshot'
       .twelve.wide.column
         .sixteen.wide.column
-          p 
-            b Navn: 
+          p
+            b Navn:
             span = @user.profile.name
-          p 
-            b Epost: 
+          p
+            b Epost:
             span = @user.profile.email
-          p 
-            b Telefon: 
+          p
+            b Telefon:
             span = @user.profile.name
-                
