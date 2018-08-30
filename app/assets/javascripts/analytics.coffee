@@ -1,4 +1,4 @@
-###class @GoogleAnalytics
+class @GoogleAnalytics
 
   @load: ->
     # Google Analytics depends on a global _gaq array. window is the global scope.
@@ -39,7 +39,4 @@
   @analyticsId: ->
     'UA-109446558-1'
 
-GoogleAnalytics.load()###
-# Put this file into your assets/javascripts/ folder and assure
-# it gets loaded by checking or editing your assets/javascripts/application.js
-# file as appropriate
+GoogleAnalytics.load()
