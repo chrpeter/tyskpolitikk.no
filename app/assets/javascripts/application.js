@@ -17,3 +17,9 @@
 //= require turbolinks
 //= require_tree .
 //= require tinymce-jquery
+
+
+document.addEventListener 'turbolinks:load', (event) ->
+  if typeof gtag is 'function'
+    gtag('set', 'location', event.data.url)
+    gtag('send', 'pageview')
