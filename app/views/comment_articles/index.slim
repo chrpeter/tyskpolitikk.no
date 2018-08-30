@@ -5,8 +5,8 @@ h1 Kommentarer
       .row.article_item
         .col-md-2
           - if comment_article.header_photo.present?
-            = image_tag comment_article.header_photo, class: 'article-photo'
-          - else 
+            = image_tag image_path(path: comment_article.header_photo.file.path), class: 'article-photo'
+          - else
             = image_tag "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", class: 'article-photo'
         .col-md-10
           h2= comment_article.title

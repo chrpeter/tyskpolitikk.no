@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :comment_articles, only: [:index, :show]
   resources :news_articles, only: [:index, :show]
   resources :users, only: [:show]
+  # resources :images, only: [:show]
+  get 'images/*path', to: 'images#show', as: :image, :defaults => {:find => true}
   resources :profile, only: [:index, :show]
   namespace :admin do
     root 'news_articles#index'
