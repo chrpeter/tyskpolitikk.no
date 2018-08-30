@@ -49,6 +49,8 @@ gem 'thor', '0.19.1'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'rack-throttle'
+
 #load .env files
 gem 'dotenv-rails'
 gem 'therubyracer'

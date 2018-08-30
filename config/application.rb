@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'rack/throttle'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -25,5 +26,9 @@ module Tyskpolitikk
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components') # Bower/NPM frontend stuff
 
+    config.middleware.use Rack::Throttle::Daily,    :max => 1  # requests
+    #config.middleware.use Rack::Throttle::Hourly,   :max => 100   # requests
+    #config.middleware.use Rack::Throttle::Minute,   :max => 60    # requests
+    #config.middleware.use Rack::Throttle::Second,   :max => 10     # requests
   end
 end
