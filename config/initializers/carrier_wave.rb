@@ -7,6 +7,4 @@ CarrierWave.configure do |config|
     region:                'eu-central-1',                  # optional, defaults to 'us-east-1'
   }
   config.fog_directory  = 'tyskpolitikk'
-  config.fog_public = false
-  config.fog_authenticated_url_expiration = 5
 end
